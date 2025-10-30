@@ -1,12 +1,13 @@
 {
   "builds": [
     { "src": "index.html", "use": "@vercel/static" },
-    { "src": "libs/**/*", "use": "@vercel/static" },
     { "src": "*.js", "use": "@vercel/static" },
-    { "src": "*.css", "use": "@vercel/static" }
+    { "src": "*.css", "use": "@vercel/static" },
+    { "src": "libs/**/*", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/libs/(.*)", "dest": "/libs/$1" },
+    { "src": "/(.*\\.(js|css))", "dest": "/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
