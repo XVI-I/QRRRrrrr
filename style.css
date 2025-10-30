@@ -35,7 +35,6 @@ header h1 {
   color: #000;
   border: 2px solid #000;
   text-transform: none;
-  /* 🧱 Ombre dans le style des cadres */
   box-shadow: 4px 4px 0 #000;
 }
 
@@ -49,6 +48,7 @@ header h1 {
   box-sizing: border-box;
   box-shadow: 6px 6px 0 #000;
   margin-top: 40px;
+  margin-bottom: 60px; /* pour respirer au-dessus du footer */
 }
 
 /* Sous-titre */
@@ -113,9 +113,9 @@ footer {
   background: #fff;
   color: #000;
   text-align: center;
-  padding: 20px 0;
+  padding: 25px 0;
   border-top: 2px solid #000;
-  margin-top: 60px;
+  box-shadow: 0 -4px 0 #000;
   position: relative;
 }
 
