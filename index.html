@@ -16,7 +16,8 @@
     <section class="box">
   <h2>GÉNÉRER PLUSIEURS QR À PARTIR D’UN EXCEL</h2>
   <p>Colonne A → Nom du fichier | Colonne B → Lien du QR</p>
-  <input type="file" id="excelFile" />
+  <input type="file" id="excelFile" accept=".xlsx, .xls" />
+
 
   <label for="batchFormat">Format de sortie :</label>
   <select id="batchFormat">
@@ -34,7 +35,8 @@
     <section class="box">
       <h2>GÉNÉRER PLUSIEURS QR À PARTIR D’UN EXCEL</h2>
       <p>Colonne A → Nom du fichier | Colonne B → Lien du QR</p>
-      <input type="file" id="excelFile" />
+      <input type="file" id="excelFile" accept=".xlsx, .xls" />
+
       <button onclick="generateBatchQR()">Lancer la génération</button>
       <a id="downloadZip" style="display:none">Télécharger le ZIP</a>
     </section>
