@@ -2,5 +2,8 @@
   "builds": [
     { "src": "index.html", "use": "@vercel/static" },
     { "src": "libs/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
