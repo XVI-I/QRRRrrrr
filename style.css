@@ -1,4 +1,4 @@
-/* === QRRRrrrr!!! — Layout centré entre header et footer, contenu centré === */
+/* === QRRRrrrr!!! — Centrage parfait + contenu responsive === */
 
 html, body {
   margin: 0;
@@ -7,7 +7,7 @@ html, body {
   background: #fafafa;
   font-family: "Space Mono", monospace;
   color: #000;
-  overflow: hidden; /* 🚫 aucun scroll */
+  overflow: hidden; /* 🚫 pas de scroll sur desktop */
 }
 
 /* ===== HEADER ===== */
@@ -25,7 +25,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 1.7rem;
+  font-size: clamp(1.3rem, 2vw, 1.7rem); /* 👈 responsive */
   letter-spacing: 2px;
   display: inline-block;
   padding: 6px 16px;
@@ -40,28 +40,27 @@ header h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 850px;
-  height: calc(100vh - 160px); /* espace équilibré header + footer */
+  width: min(90%, 850px);
+  height: calc(100vh - 160px);
   background: #fff;
   border: 1px solid #000;
   box-shadow: 5px 5px 0 #000;
   box-sizing: border-box;
-  display: flex; /* 💥 centre le contenu */
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+  justify-content: center; /* contenu centré verticalement */
+  align-items: center; /* contenu centré horizontalement */
+  padding: 3vw; /* 👈 padding fluide */
   text-align: center;
   overflow: hidden;
 }
 
 /* Sous-titre */
 .subtitle {
-  margin: 0 0 20px 0;
-  padding-bottom: 8px;
+  margin: 0 0 2vw 0;
+  padding-bottom: 1vw;
   border-bottom: 1px solid #000;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
   width: 100%;
 }
 
@@ -70,23 +69,24 @@ header h1 {
   border: 1px solid #000;
   box-shadow: 3px 3px 0 #000;
   background: #fdfdfd;
-  padding: 15px;
-  margin-top: 20px;
+  padding: clamp(10px, 2vw, 20px);
+  margin-top: clamp(10px, 2vw, 20px);
   text-align: left;
   width: 100%;
   max-width: 500px;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
 }
 
 /* Inputs & Boutons */
 input, button, select {
   display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 8px;
+  margin: clamp(6px, 1vw, 10px) 0;
+  padding: clamp(6px, 1vw, 10px);
   border: 1px solid #000;
   background: #fff;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
   box-sizing: border-box;
 }
 
@@ -118,23 +118,28 @@ footer p {
   border: 1px solid #000;
   padding: 8px 16px;
   box-shadow: 3px 3px 0 #000;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
 }
 
-/* === Responsive === */
+/* === Responsive mobile === */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.4rem;
-    padding: 6px 12px;
+  html, body {
+    overflow: auto; /* ✅ on remet le scroll sur mobile */
   }
 
   .container {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
     width: 92%;
-    height: calc(100vh - 130px);
-    padding: 20px;
-    justify-content: flex-start; /* sur mobile, contenu en haut */
+    height: auto;
+    min-height: calc(100vh - 130px);
+    justify-content: flex-start;
     align-items: stretch;
-    overflow-y: auto; /* scroll autorisé si nécessaire */
+    box-shadow: none;
+    padding: 20px;
+    overflow: visible;
   }
 
   footer {
