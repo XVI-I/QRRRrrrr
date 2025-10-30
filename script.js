@@ -97,7 +97,6 @@ async function generateBatchQR() {
     const canvas = document.createElement('canvas');
     new QRCode(canvas, { text: url, width: 200, height: 200 });
     await new Promise(res => setTimeout(res, 300));
-
     const img = canvas.querySelector('img');
 
     if (format === 'svg') {

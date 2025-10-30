@@ -14,12 +14,19 @@
     <p class="subtitle">Générer des QR codes en 2 clics</p>
 
     <section class="box">
+      <h2>GÉNÉRER UN QR CODE UNIQUE</h2>
+      <input id="singleLink" placeholder="Coller un lien ici..." />
+      <input type="file" id="fileUpload" />
+      <button onclick="generateSingleQR()">GÉNÉRER MON QR</button>
+      <div id="qrResult"></div>
+    </section>
+
+    <section class="box">
   <h2>GÉNÉRER PLUSIEURS QR À PARTIR D’UN EXCEL</h2>
   <p>Colonne A → Nom du fichier | Colonne B → Lien du QR</p>
   <input type="file" id="excelFile" accept=".xlsx, .xls" />
 
-
-  <label for="batchFormat">Format de sortie :</label>
+  <label for="batchFormat">Format des QR :</label>
   <select id="batchFormat">
     <option value="png">PNG</option>
     <option value="jpeg">JPEG</option>
@@ -31,15 +38,6 @@
   <a id="downloadZip" style="display:none">📦 Télécharger le ZIP</a>
 </section>
 
-
-    <section class="box">
-      <h2>GÉNÉRER PLUSIEURS QR À PARTIR D’UN EXCEL</h2>
-      <p>Colonne A → Nom du fichier | Colonne B → Lien du QR</p>
-      <input type="file" id="excelFile" accept=".xlsx, .xls" />
-
-      <button onclick="generateBatchQR()">Lancer la génération</button>
-      <a id="downloadZip" style="display:none">Télécharger le ZIP</a>
-    </section>
 
     <footer>© 2025 QRRRrrrr!!! – Générateur de QR no code</footer>
   </main>
