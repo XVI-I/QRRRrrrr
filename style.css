@@ -1,4 +1,4 @@
-/* === QRRRrrrr!!! STYLE — LIGNES UNIFORMES === */
+/* === QRRRrrrr!!! STYLE — ESPACEMENT AJUSTÉ === */
 
 body {
   background: #fafafa;
@@ -17,7 +17,7 @@ header {
   background: #fff;
   color: #000;
   text-align: center;
-  padding: 20px 0;
+  padding: 15px 0; /* légèrement réduit */
   border-bottom: 1px solid #000;
   position: sticky;
   top: 0;
@@ -29,7 +29,7 @@ header h1 {
   font-size: 2rem;
   letter-spacing: 3px;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 8px 20px; /* réduit aussi un peu */
   background: #fff;
   color: #000;
   border: 1px solid #000;
@@ -46,7 +46,7 @@ header h1 {
   padding: 40px;
   box-sizing: border-box;
   box-shadow: 6px 6px 0 #000;
-  margin: 40px auto;
+  margin: 20px auto 40px auto; /* marge top divisée par 2 */
   flex-grow: 1;
 }
 
@@ -113,7 +113,7 @@ footer {
   color: #000;
   text-align: center;
   padding: 25px 0;
-  border-top: 1px solid #000; /* ligne fine */
+  border-top: 1px solid #000;
   position: sticky;
   bottom: 0;
   z-index: 5;
@@ -133,7 +133,7 @@ footer p {
 @media (max-width: 768px) {
   header h1 {
     font-size: 1.6rem;
-    padding: 8px 14px;
+    padding: 6px 14px;
     box-shadow: 3px 3px 0 #000;
   }
 
@@ -145,7 +145,7 @@ footer p {
   .container {
     padding: 20px;
     box-shadow: none;
-    margin-top: 20px;
+    margin: 15px auto 20px auto; /* encore un peu réduit sur mobile */
   }
 
   .box {
