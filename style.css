@@ -34,8 +34,9 @@ header h1 {
   background: #fff;
   color: #000;
   border: 2px solid #000;
-  /* on enlève la transformation en majuscules */
   text-transform: none;
+  /* 🧱 Ombre dans le style des cadres */
+  box-shadow: 4px 4px 0 #000;
 }
 
 /* ===== MAIN CONTAINER ===== */
@@ -120,6 +121,7 @@ footer {
   header h1 {
     font-size: 1.6rem;
     padding: 8px 14px;
+    box-shadow: 3px 3px 0 #000;
   }
 
   .container {
@@ -141,6 +143,7 @@ footer {
   header h1 {
     font-size: 1.3rem;
     letter-spacing: 2px;
+    box-shadow: 2px 2px 0 #000;
   }
 
   .subtitle {
