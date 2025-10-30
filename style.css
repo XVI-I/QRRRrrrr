@@ -1,86 +1,75 @@
-/* === QRRRrrrr!!! — Container centré sans vide ni scroll === */
+/* === QRRRrrrr!!! — Version stable, sans vide ni bug === */
 
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   background: #fafafa;
   font-family: "Space Mono", monospace;
   color: #000;
+  height: 100%;
 }
 
-/* Structure générale : header + main (centré) + footer */
+/* Structure : header, container, footer */
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header {
   background: #fff;
-  text-align: center;
-  padding: 14px 0;
   border-bottom: 1px solid #000;
-  flex-shrink: 0;
+  text-align: center;
+  padding: 16px 0;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 1.7rem;
-  letter-spacing: 2px;
   display: inline-block;
-  padding: 6px 16px;
-  background: #fff;
-  color: #000;
+  margin: 0;
+  padding: 8px 20px;
+  font-size: 1.8rem;
   border: 1px solid #000;
   box-shadow: 3px 3px 0 #000;
+  background: #fff;
 }
 
-/* ===== CONTAINER PRINCIPAL ===== */
-main {
-  flex: 1 0 auto; /* prend la place entre header et footer */
-  display: flex;
-  align-items: center; /* centre verticalement */
-  justify-content: center; /* centre horizontalement */
-  padding: 20px 0;
-}
-
+/* CONTENU CENTRAL */
 .container {
+  flex-grow: 1; /* prend juste la place disponible entre header et footer */
   width: 90%;
   max-width: 850px;
-  border: 1px solid #000;
+  margin: 30px auto;
   background: #fff;
+  border: 1px solid #000;
   box-shadow: 5px 5px 0 #000;
   padding: 30px;
   box-sizing: border-box;
-  transition: all 0.2s ease-in-out;
 }
 
-/* Sous-titre */
+/* sous-titre */
 .subtitle {
   text-align: center;
   margin: 0 0 20px 0;
-  font-size: 1rem;
+  padding-bottom: 8px;
   border-bottom: 1px solid #000;
-  padding: 10px 0;
+  font-size: 1rem;
 }
 
-/* Boîtes */
+/* BOÎTES */
 .box {
   border: 1px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  background: #fdfdfd;
   padding: 15px;
   margin-top: 20px;
-  background: #fdfdfd;
-  box-shadow: 3px 3px 0 #000;
 }
 
-/* Inputs & Boutons */
+/* FORMULAIRES */
 input, button, select {
   display: block;
   width: 100%;
-  margin: 8px 0;
+  margin: 10px 0;
   padding: 8px;
   border: 1px solid #000;
   background: #fff;
@@ -92,56 +81,27 @@ input, button, select {
 button {
   background: #000;
   color: #fff;
-  font-weight: bold;
   cursor: pointer;
   transition: 0.2s ease;
 }
-button:hover { background: #333; }
+button:hover {
+  background: #333;
+}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
   background: #fff;
   border-top: 1px solid #000;
-  height: 70px; /* 🚀 taille fixe */
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
 footer p {
   margin: 0;
-  display: inline-block;
   border: 1px solid #000;
   padding: 8px 16px;
-  background: #fff;
   box-shadow: 3px 3px 0 #000;
   font-size: 0.85rem;
-}
-
-/* === RESPONSIVE === */
-@media (max-height: 800px) {
-  main {
-    align-items: flex-start; /* si la fenêtre est trop basse, on repasse en scroll normal */
-    padding: 10px 0;
-  }
-}
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.4rem;
-    box-shadow: 2px 2px 0 #000;
-  }
-  .container {
-    width: 92%;
-    padding: 20px;
-    box-shadow: none;
-  }
-  footer {
-    height: 60px;
-  }
-  footer p {
-    font-size: 0.78rem;
-    box-shadow: 2px 2px 0 #000;
-  }
 }
