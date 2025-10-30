@@ -29,12 +29,13 @@ header h1 {
   margin: 0;
   font-size: 2rem;
   letter-spacing: 3px;
-  text-transform: uppercase;
   display: inline-block;
   padding: 10px 20px;
   background: #fff;
   color: #000;
   border: 2px solid #000;
+  /* on enlève la transformation en majuscules */
+  text-transform: none;
 }
 
 /* ===== MAIN CONTAINER ===== */
@@ -49,7 +50,7 @@ header h1 {
   margin-top: 40px;
 }
 
-/* Sous-titre (le H1 d'avant est retiré) */
+/* Sous-titre */
 .subtitle {
   text-align: center;
   margin-bottom: 30px;
@@ -89,7 +90,6 @@ button {
   background: #000;
   color: #fff;
   font-weight: bold;
-  text-transform: uppercase;
   cursor: pointer;
   transition: 0.2s ease;
 }
