@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QRRRrrrr!!!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>QRRRrrrr!!!</h1>
+    <p class="subtitle">Générer des QR codes en 2 clics</p>
+
+    <section class="box">
+      <h2>GÉNÉRER UN QR CODE UNIQUE</h2>
+      <input id="singleLink" placeholder="Coller un lien ici..." />
+      <input type="file" id="fileUpload" />
+      <button onclick="generateSingleQR()">GÉNÉRER MON QR</button>
+      <div id="qrResult"></div>
+    </section>
+
+    <section class="box">
+      <h2>GÉNÉRER PLUSIEURS QR À PARTIR D’UN EXCEL</h2>
+      <p>Colonne A → Nom du fichier | Colonne B → Lien du QR</p>
+      <input type="file" id="excelFile" />
+      <button onclick="generateBatchQR()">Lancer la génération</button>
+      <a id="downloadZip" style="display:none">Télécharger le ZIP</a>
+    </section>
+
+    <footer>© 2025 QRRRrrrr!!! – Générateur de QR no code</footer>
+  </main>
+
+  <script src="libs/qrcode.min.js"></script>
+  <script src="libs/xlsx.full.min.js"></script>
+  <script src="libs/jszip.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
