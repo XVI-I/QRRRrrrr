@@ -1,14 +1,14 @@
-/* === QRRRrrrr!!! STYLE — PHRASE COLLÉE EN HAUT DU CONTAINER === */
+/* === QRRRrrrr!!! STYLE — VERSION COMPACTE ET RESPONSIVE === */
 
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background: #fafafa;
   font-family: "Space Mono", monospace;
   color: #000;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 /* ===== HEADER ===== */
@@ -17,7 +17,7 @@ header {
   background: #fff;
   color: #000;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0; /* plus compact */
   border-bottom: 1px solid #000;
   position: sticky;
   top: 0;
@@ -26,63 +26,67 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2rem;
-  letter-spacing: 3px;
+  font-size: 1.8rem; /* légèrement réduit */
+  letter-spacing: 2px;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 6px 16px;
   background: #fff;
   color: #000;
   border: 1px solid #000;
   text-transform: none;
-  box-shadow: 4px 4px 0 #000;
+  box-shadow: 3px 3px 0 #000;
 }
 
 /* ===== MAIN CONTAINER ===== */
 .container {
   width: 100%;
-  max-width: 900px;
+  max-width: 850px;
   border: 1px solid #000;
   background: #fff;
-  padding: 0 40px 40px 40px; /* plus de padding en haut */
+  padding: 0 30px 30px 30px;
   box-sizing: border-box;
-  box-shadow: 6px 6px 0 #000;
-  margin: 40px auto;
+  box-shadow: 5px 5px 0 #000;
+  margin: 20px auto;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: calc(100vh - 150px); /* tient dans l’écran avec header/footer */
 }
 
 /* Sous-titre */
 .subtitle {
   text-align: center;
-  margin: 0 0 30px 0; /* on enlève la marge haute */
-  font-size: 1rem;
+  margin: 0 0 20px 0;
+  font-size: 0.95rem;
   border-bottom: 1px solid #000;
-  padding: 15px 0 10px 0; /* on garde un peu d’air en bas */
+  padding: 12px 0 8px 0;
 }
 
 /* Boîtes */
 .box {
   border: 1px solid #000;
-  padding: 20px;
-  margin-top: 25px;
+  padding: 15px;
+  margin-top: 20px;
   background: #fdfdfd;
-  box-shadow: 4px 4px 0 #000;
+  box-shadow: 3px 3px 0 #000;
 }
 
 .box h2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
 }
 
 /* Inputs & Boutons */
 input, button, select {
   display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 10px;
+  margin: 8px 0;
+  padding: 8px;
   border: 1px solid #000;
   background: #fff;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   box-sizing: border-box;
 }
 
@@ -103,7 +107,7 @@ a {
   color: #000;
   text-decoration: underline;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 /* ===== FOOTER ===== */
@@ -112,7 +116,7 @@ footer {
   background: #fff;
   color: #000;
   text-align: center;
-  padding: 25px 0;
+  padding: 15px 0;
   border-top: 1px solid #000;
   position: sticky;
   bottom: 0;
@@ -123,44 +127,50 @@ footer p {
   margin: 0;
   display: inline-block;
   border: 1px solid #000;
-  padding: 10px 20px;
+  padding: 8px 16px;
   background: #fff;
-  box-shadow: 4px 4px 0 #000;
-  font-size: 0.9rem;
+  box-shadow: 3px 3px 0 #000;
+  font-size: 0.85rem;
 }
 
-/* === Responsive === */
-@media (max-width: 768px) {
+/* === RESPONSIVE ADAPTATION === */
+@media (max-width: 1024px) {
+  /* sur laptop et petits écrans, légère adaptation */
+  .container {
+    max-width: 90%;
+    padding: 0 20px 25px 20px;
+    min-height: calc(100vh - 140px);
+  }
+
   header h1 {
     font-size: 1.6rem;
-    padding: 8px 14px;
-    box-shadow: 3px 3px 0 #000;
   }
 
-  footer p {
-    box-shadow: 3px 3px 0 #000;
-    font-size: 0.8rem;
-  }
-
-  .container {
-    padding: 0 20px 20px 20px; /* plus de padding top aussi ici */
-    box-shadow: none;
-    margin-top: 20px;
-  }
-
-  .box {
-    padding: 15px;
-  }
-
-  button {
+  .subtitle {
     font-size: 0.9rem;
   }
 }
 
-@media (max-width: 480px) {
+/* === MOBILE === */
+@media (max-width: 768px) {
+  body {
+    display: block;
+  }
+
+  header, footer {
+    position: relative;
+  }
+
+  .container {
+    min-height: auto; /* scroll rétabli */
+    margin: 15px auto 30px auto;
+    box-shadow: none;
+    padding: 15px;
+  }
+
   header h1 {
-    font-size: 1.3rem;
-    letter-spacing: 2px;
+    font-size: 1.4rem;
+    padding: 6px 12px;
     box-shadow: 2px 2px 0 #000;
   }
 
@@ -170,16 +180,11 @@ footer p {
   }
 
   .subtitle {
-    font-size: 0.9rem;
-    margin: 0 0 20px 0;
-    padding: 10px 0 8px 0;
-  }
-
-  .box h2 {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
   input, button, select {
     font-size: 0.85rem;
+    padding: 7px;
   }
 }
