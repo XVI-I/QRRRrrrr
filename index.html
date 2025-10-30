@@ -14,12 +14,22 @@
     <p class="subtitle">Générer des QR codes en 2 clics</p>
 
     <section class="box">
-      <h2>GÉNÉRER UN QR CODE UNIQUE</h2>
-      <input id="singleLink" placeholder="Coller un lien ici..." />
-      <input type="file" id="fileUpload" />
-      <button onclick="generateSingleQR()">GÉNÉRER MON QR</button>
-      <div id="qrResult"></div>
-    </section>
+  <h2>GÉNÉRER PLUSIEURS QR À PARTIR D’UN EXCEL</h2>
+  <p>Colonne A → Nom du fichier | Colonne B → Lien du QR</p>
+  <input type="file" id="excelFile" />
+
+  <label for="batchFormat">Format de sortie :</label>
+  <select id="batchFormat">
+    <option value="png">PNG</option>
+    <option value="jpeg">JPEG</option>
+    <option value="pdf">PDF</option>
+    <option value="svg">SVG</option>
+  </select>
+
+  <button onclick="generateBatchQR()">Lancer la génération</button>
+  <a id="downloadZip" style="display:none">📦 Télécharger le ZIP</a>
+</section>
+
 
     <section class="box">
       <h2>GÉNÉRER PLUSIEURS QR À PARTIR D’UN EXCEL</h2>

@@ -80,6 +80,7 @@ function triggerDownload(blob, filename) {
 // --- GÉNÉRATION DE GROUPE (Excel inchangée) ---
 async function generateBatchQR() {
   const file = document.getElementById('excelFile').files[0];
+  const format = document.getElementById('batchFormat').value;
   if (!file) return alert('Importe un fichier Excel');
 
   const data = await file.arrayBuffer();
@@ -96,14 +97,42 @@ async function generateBatchQR() {
     const canvas = document.createElement('canvas');
     new QRCode(canvas, { text: url, width: 200, height: 200 });
     await new Promise(res => setTimeout(res, 300));
-    const imgData = canvas.querySelector('img').src.split(',')[1];
-    zip.file(`${name}.png`, imgData, { base64: true });
+
+    const img = canvas.querySelector('img');
+
+    if (format === 'svg') {
+      const svgData = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+          <image href="${img.src}" width="200" height="200" />
+        </svg>`;
+      zip.file(`${name}.svg`, svgData);
+    } else if (format === 'pdf') {
+      const { jsPDF } = window.jspdf || await import('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
+      const pdf = new jsPDF();
+      pdf.addImage(img.src, 'PNG', 10, 10, 50, 50);
+      const pdfBlob = pdf.output('blob');
+      zip.file(`${name}.pdf`, pdfBlob);
+    } else {
+      // PNG ou JPEG
+      const canvas2 = document.createElement('canvas');
+      const ctx = canvas2.getContext('2d');
+      const qrImg = new Image();
+      qrImg.src = img.src;
+      await qrImg.decode();
+      canvas2.width = 200;
+      canvas2.height = 200;
+      ctx.drawImage(qrImg, 0, 0);
+      const mime = format === 'jpeg' ? 'image/jpeg' : 'image/png';
+      const imgData = canvas2.toDataURL(mime).split(',')[1];
+      zip.file(`${name}.${format}`, imgData, { base64: true });
+    }
   }
 
   const blob = await zip.generateAsync({ type: 'blob' });
   const link = document.getElementById('downloadZip');
   link.href = URL.createObjectURL(blob);
-  link.download = 'QRRRrrrr_QRs.zip';
+  link.download = `QRRRrrrr_QRs_${format}.zip`;
   link.style.display = 'block';
-  link.innerText = '📦 Télécharger le dossier ZIP';
+  link.innerText = `📦 Télécharger le ZIP (${format.toUpperCase()})`;
 }
+
