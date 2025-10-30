@@ -1,4 +1,4 @@
-/* === QRRRrrrr!!! — FIX DU VIDE BAS === */
+/* === QRRRrrrr!!! — Footer fixe + layout fluide === */
 
 html, body {
   height: 100%;
@@ -9,7 +9,7 @@ html, body {
   color: #000;
 }
 
-/* Layout colonne : header + contenu auto + footer collé en bas */
+/* ===== STRUCTURE GLOBALE ===== */
 body {
   display: flex;
   flex-direction: column;
@@ -27,6 +27,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  flex-shrink: 0;
 }
 
 header h1 {
@@ -51,8 +52,8 @@ header h1 {
   padding: 0 28px 24px 28px;
   box-sizing: border-box;
   box-shadow: 5px 5px 0 #000;
-  margin: 20px auto; /* juste une marge naturelle */
-  flex: 0 0 auto; /* 🚀 ne s’étire plus, s’adapte au contenu */
+  margin: 20px auto;
+  flex: 1 0 auto; /* prend l'espace dispo entre header et footer */
 }
 
 /* Sous-titre collé au haut du container */
@@ -114,9 +115,12 @@ footer {
   background: #fff;
   color: #000;
   text-align: center;
-  padding: 14px 0;
   border-top: 1px solid #000;
-  flex-shrink: 0; /* ne disparaît pas si peu de contenu */
+  height: 70px; /* 🚀 hauteur fixe */
+  flex-shrink: 0;
+  display: flex;
+  align-items: center; /* centré verticalement */
+  justify-content: center;
 }
 
 footer p {
@@ -147,7 +151,15 @@ footer p {
   .subtitle { font-size: 0.9rem; }
   .box { padding: 12px; }
   input, button, select { font-size: 0.85rem; padding: 7px; }
-  footer p { box-shadow: 2px 2px 0 #000; font-size: 0.78rem; }
+
+  footer {
+    height: 60px; /* footer plus compact sur mobile */
+  }
+
+  footer p {
+    box-shadow: 2px 2px 0 #000;
+    font-size: 0.78rem;
+  }
 }
 
 @media (max-width: 480px) {
