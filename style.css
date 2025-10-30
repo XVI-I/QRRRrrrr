@@ -1,53 +1,57 @@
-/* === QRRRrrrr!!! — Version stable, sans vide ni bug === */
+/* === QRRRrrrr!!! — Layout fixe centré sans scroll === */
 
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
   background: #fafafa;
   font-family: "Space Mono", monospace;
   color: #000;
-  height: 100%;
+  overflow: hidden; /* 🚫 empêche le scroll */
 }
 
-/* Structure : header, container, footer */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* HEADER */
+/* ===== HEADER ===== */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: #fff;
   border-bottom: 1px solid #000;
   text-align: center;
-  padding: 16px 0;
+  padding: 14px 0;
+  z-index: 10;
 }
 
 header h1 {
-  display: inline-block;
   margin: 0;
-  padding: 8px 20px;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  display: inline-block;
+  padding: 6px 16px;
+  background: #fff;
   border: 1px solid #000;
   box-shadow: 3px 3px 0 #000;
-  background: #fff;
 }
 
-/* CONTENU CENTRAL */
+/* ===== CONTAINER CENTRÉ ===== */
 .container {
-  flex-grow: 1; /* prend juste la place disponible entre header et footer */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centre parfaitement */
   width: 90%;
   max-width: 850px;
-  margin: 30px auto;
+  height: calc(100vh - 160px); /* 🧭 espace réservé pour header + footer */
   background: #fff;
   border: 1px solid #000;
   box-shadow: 5px 5px 0 #000;
   padding: 30px;
   box-sizing: border-box;
+  overflow: hidden; /* évite tout dépassement */
 }
 
-/* sous-titre */
+/* Sous-titre */
 .subtitle {
   text-align: center;
   margin: 0 0 20px 0;
@@ -56,7 +60,7 @@ header h1 {
   font-size: 1rem;
 }
 
-/* BOÎTES */
+/* Boîtes */
 .box {
   border: 1px solid #000;
   box-shadow: 3px 3px 0 #000;
@@ -65,7 +69,7 @@ header h1 {
   margin-top: 20px;
 }
 
-/* FORMULAIRES */
+/* Inputs & Boutons */
 input, button, select {
   display: block;
   width: 100%;
@@ -84,18 +88,21 @@ button {
   cursor: pointer;
   transition: 0.2s ease;
 }
-button:hover {
-  background: #333;
-}
+button:hover { background: #333; }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background: #fff;
   border-top: 1px solid #000;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 footer p {
@@ -104,4 +111,20 @@ footer p {
   padding: 8px 16px;
   box-shadow: 3px 3px 0 #000;
   font-size: 0.85rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+    padding: 6px 12px;
+  }
+  .container {
+    width: 92%;
+    height: calc(100vh - 130px); /* footer plus petit sur mobile */
+    padding: 20px;
+  }
+  footer {
+    height: 60px;
+  }
 }
