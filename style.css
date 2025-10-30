@@ -32,7 +32,7 @@ header h1 {
   padding: 10px 20px;
   background: #fff;
   color: #000;
-  border: 1px solid #000; /* uniformisé */
+  border: 1px solid #000;
   text-transform: none;
   box-shadow: 4px 4px 0 #000;
 }
@@ -41,7 +41,7 @@ header h1 {
 .container {
   width: 100%;
   max-width: 900px;
-  border: 1px solid #000; /* uniformisé */
+  border: 1px solid #000;
   background: #fff;
   padding: 40px;
   box-sizing: border-box;
@@ -61,7 +61,7 @@ header h1 {
 
 /* Boîtes */
 .box {
-  border: 1px solid #000; /* uniformisé */
+  border: 1px solid #000;
   padding: 20px;
   margin-top: 25px;
   background: #fdfdfd;
@@ -79,7 +79,7 @@ input, button, select {
   width: 100%;
   margin: 10px 0;
   padding: 10px;
-  border: 1px solid #000; /* uniformisé */
+  border: 1px solid #000;
   background: #fff;
   font-family: inherit;
   font-size: 0.95rem;
@@ -113,8 +113,7 @@ footer {
   color: #000;
   text-align: center;
   padding: 25px 0;
-  border-top: 1px solid #000; /* uniformisé */
-  box-shadow: 0 -4px 0 #000;
+  border-top: 1px solid #000; /* ligne fine */
   position: sticky;
   bottom: 0;
   z-index: 5;
@@ -123,7 +122,7 @@ footer {
 footer p {
   margin: 0;
   display: inline-block;
-  border: 1px solid #000; /* uniformisé */
+  border: 1px solid #000;
   padding: 10px 20px;
   background: #fff;
   box-shadow: 4px 4px 0 #000;
