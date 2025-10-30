@@ -107,13 +107,26 @@ a {
   margin-top: 10px;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
-  margin-top: 40px;
+  width: 100%;
+  background: #fff;
+  color: #000;
   text-align: center;
-  font-size: 0.85rem;
-  border-top: 1px solid #000;
-  padding-top: 15px;
+  padding: 20px 0;
+  border-top: 2px solid #000;
+  margin-top: 60px;
+  position: relative;
+}
+
+footer p {
+  margin: 0;
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 4px 4px 0 #000;
+  font-size: 0.9rem;
 }
 
 /* === Responsive === */
@@ -122,6 +135,11 @@ footer {
     font-size: 1.6rem;
     padding: 8px 14px;
     box-shadow: 3px 3px 0 #000;
+  }
+
+  footer p {
+    box-shadow: 3px 3px 0 #000;
+    font-size: 0.8rem;
   }
 
   .container {
@@ -144,6 +162,11 @@ footer {
     font-size: 1.3rem;
     letter-spacing: 2px;
     box-shadow: 2px 2px 0 #000;
+  }
+
+  footer p {
+    box-shadow: 2px 2px 0 #000;
+    font-size: 0.75rem;
   }
 
   .subtitle {
