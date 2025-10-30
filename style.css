@@ -1,4 +1,4 @@
-/* === QRRRrrrr!!! STYLE — ESPACEMENT FIXÉ === */
+/* === QRRRrrrr!!! STYLE — PHRASE COLLÉE EN HAUT DU CONTAINER === */
 
 body {
   background: #fafafa;
@@ -17,7 +17,7 @@ header {
   background: #fff;
   color: #000;
   text-align: center;
-  padding: 15px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #000;
   position: sticky;
   top: 0;
@@ -29,7 +29,7 @@ header h1 {
   font-size: 2rem;
   letter-spacing: 3px;
   display: inline-block;
-  padding: 8px 20px;
+  padding: 10px 20px;
   background: #fff;
   color: #000;
   border: 1px solid #000;
@@ -43,20 +43,20 @@ header h1 {
   max-width: 900px;
   border: 1px solid #000;
   background: #fff;
-  padding: 35px 40px 40px 40px; /* léger ajustement du haut */
+  padding: 0 40px 40px 40px; /* plus de padding en haut */
   box-sizing: border-box;
   box-shadow: 6px 6px 0 #000;
-  margin: 10px auto 40px auto; /* espace global réduit */
+  margin: 40px auto;
   flex-grow: 1;
 }
 
 /* Sous-titre */
 .subtitle {
   text-align: center;
-  margin: 10px 0 30px 0; /* marge haute réduite */
+  margin: 0 0 30px 0; /* on enlève la marge haute */
   font-size: 1rem;
   border-bottom: 1px solid #000;
-  padding-bottom: 10px;
+  padding: 15px 0 10px 0; /* on garde un peu d’air en bas */
 }
 
 /* Boîtes */
@@ -133,7 +133,7 @@ footer p {
 @media (max-width: 768px) {
   header h1 {
     font-size: 1.6rem;
-    padding: 6px 14px;
+    padding: 8px 14px;
     box-shadow: 3px 3px 0 #000;
   }
 
@@ -143,9 +143,9 @@ footer p {
   }
 
   .container {
-    padding: 25px;
+    padding: 0 20px 20px 20px; /* plus de padding top aussi ici */
     box-shadow: none;
-    margin: 10px auto 20px auto;
+    margin-top: 20px;
   }
 
   .box {
@@ -171,7 +171,8 @@ footer p {
 
   .subtitle {
     font-size: 0.9rem;
-    margin: 5px 0 20px 0; /* encore plus compact sur mobile */
+    margin: 0 0 20px 0;
+    padding: 10px 0 8px 0;
   }
 
   .box h2 {
